@@ -1,9 +1,0 @@
-{
-  "env": {
-    "MONGO_USER": "daylan",
-    "MONGO_PASSWORD": "S072097",
-    "MONGO_DEFAULT_DATABASE": "shop",
-    "STRIPE_KEY": "sk_test_51GzbPzKNzqbgDS69nvuSLIZGLkBjdvoCobbSCe1CE85e2hMn4IVvD7A8Q3xIpkRF3gjPvFDZIQmde5VsGZ0CWfuJ00RmrNbquv",
-    "SENDGRID_KEY": "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"
-  }
-}
