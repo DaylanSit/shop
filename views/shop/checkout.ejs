@@ -1,0 +1,43 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/cart.css">
+
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <main>
+            <ul class="cart__item-list">
+                <% products.forEach(p => { %>
+                    <li class="cart__item">
+                        <h1><%= p.productId.title %></h1>
+                        <h2>Quantity: <%= p.quantity %></h2>
+                    </li>
+                <% }) %>
+            </ul>
+
+            <div class="centered">
+                <h2>Total: <%= totalSum %></h2>
+            </div>
+            <div class="centered">
+                <button id='order-btn' class='btn'>Order Now</button>
+                <script src="https://js.stripe.com/v3/"></script>
+                <script>
+                    var stripe = Stripe("pk_test_51GzbPzKNzqbgDS69rV8KrXEdPv3BVgnnTz2eE0we6fBZo1eRSbYvXCLD35YRyl76xG0tQ3lpyzBGdUvOlrHpAzV900RZrZ2SD0");
+                    var orderBtn = document.getElementById('order-btn')
+                    orderBtn.addEventListener('click', function(){
+                        
+                        console.log("Click");
+                        // this function redirects the user to some of Stripe's pages where the 
+                        // user will enter credit card data and once this is done the user is redirect back to us
+                        // the function requires a Stripe specific session ID which is created on the server in getCheckout
+                        stripe.redirectToCheckout({
+                            sessionId:'<%= sessionId %>'
+                        }
+                        )
+                    })
+
+                </script>
+            </div>
+          
+        </main>
+        <%- include('../includes/end.ejs') %>
