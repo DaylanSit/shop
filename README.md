@@ -10,4 +10,4 @@ To view the deployed applcation, visit: https://daylan-shop.herokuapp.com/
 * Implemented email sending with SendGrid, file uploads/downloads, pagination of products, and secure payments with Stripe
 * Created an Entity Relationship diagram to structure the relational database before it was implemented
 
-**Note: Images are saved and served from Heroku servers. Heroku uses an ephemeral filesystem, so the uploaded image files get wiped when the Heroku servers restart. To fix this, I plan on using a blob store such as Amazon S3**
+**Note: Images are saved and served from Heroku servers. Heroku uses an ephemeral filesystem, so the uploaded image files get wiped when the Heroku servers restart. To fix this, I plan on using an object storage service such as Amazon S3 or Azure Blob Storage**
